@@ -1,5 +1,5 @@
 module.exports = {
-    base: '/learn-ts/',
+    base: '/blog-new/',
     title: 'TypeScript',
     description: 'TS學習筆記',
     themeConfig: {
