@@ -13,7 +13,7 @@ categories:
 
 #### （一）命名规范
 ---
- v#### 1.1.1 命名严谨性
+#### 1.1.1 命名严谨性
 尽量使用语义化的英文命名方式，严禁使用拼音与英文混合的方式，即使纯拼音命名方式也要避免采用。
 
 #### 1.1.2 项目命名
@@ -153,13 +153,19 @@ src                               源码目录
 |-- lib                              外部引用的插件存放及修改文件
 |-- plugins                          插件，全局使用
 |-- router                           路由，统一管理
+|-- |-- modules                      按照专题划分模块
+|-- |-- |-- education.js             教育专题
+|-- |-- index.js                     首页入口
 |-- store                            vuex, 统一管理
+|-- |-- modules                      按照专题划分模块
+|-- |-- |-- education
+|-- |-- index.js
 |-- views                            视图目录
-|   |-- market                           market模块名
-|   |-- |-- market-list.vue              market列表页面
-|   |-- |-- market-detail.vue            market详情页面
-|   |-- |-- components                   market模块通用组件文件夹
-|   |-- employee                         employee模块
+|   |-- monitoring                       market模块名
+|   |-- |-- index.vue                    market列表页面
+|   |-- |-- components                   market详情页面
+|   |-- |-- |--                market模块通用组件文件夹
+|   |-- decision                         employee模块
 ```
 #### 2.1.2 api目录规范
 - 文件、变量命名要尽量与后端保持一致
