@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>ts高级用法进阶 | Liaowq</title>
+    <meta name="generator" content="VuePress 1.8.2">
+    <link rel="icon" href="/favicon.png">
+    <script>
+            var _hmt = _hmt || [];
+            (function() {
+              var hm = document.createElement("script");
+              hm.src = "https://hm.baidu.com/hm.js?9c279da92a4d49aea2ae2a2b0cb96950";
+              var s = document.getElementsByTagName("script")[0]; 
+              s.parentNode.insertBefore(hm, s);
+            })();
+        </script>
+    <meta name="description" content="前端工程师，记录学习的脚步">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+    
+    <link rel="preload" href="/assets/css/0.styles.a5fc1f3a.css" as="style"><link rel="preload" href="/assets/js/app.ada5a00d.js" as="script"><link rel="preload" href="/assets/js/3.7abb383a.js" as="script"><link rel="preload" href="/assets/js/1.bfb1528b.js" as="script"><link rel="preload" href="/assets/js/48.b4dbb0b7.js" as="script"><link rel="prefetch" href="/assets/js/10.922a52e0.js"><link rel="prefetch" href="/assets/js/11.103a0d9c.js"><link rel="prefetch" href="/assets/js/12.155b16bd.js"><link rel="prefetch" href="/assets/js/13.4c4363ba.js"><link rel="prefetch" href="/assets/js/14.b090dd04.js"><link rel="prefetch" href="/assets/js/15.c57a4838.js"><link rel="prefetch" href="/assets/js/16.efd3b8c7.js"><link rel="prefetch" href="/assets/js/17.6e9058b2.js"><link rel="prefetch" href="/assets/js/18.f2193e76.js"><link rel="prefetch" href="/assets/js/19.a0d444a5.js"><link rel="prefetch" href="/assets/js/20.61daf7b8.js"><link rel="prefetch" href="/assets/js/21.ea1b4295.js"><link rel="prefetch" href="/assets/js/22.852036fa.js"><link rel="prefetch" href="/assets/js/23.4484a8a4.js"><link rel="prefetch" href="/assets/js/24.1951bbf8.js"><link rel="prefetch" href="/assets/js/25.9adf0c7e.js"><link rel="prefetch" href="/assets/js/26.eb8cda2b.js"><link rel="prefetch" href="/assets/js/27.355cc091.js"><link rel="prefetch" href="/assets/js/28.167f906c.js"><link rel="prefetch" href="/assets/js/29.26852964.js"><link rel="prefetch" href="/assets/js/30.d3cc36dd.js"><link rel="prefetch" href="/assets/js/31.70c7f3a1.js"><link rel="prefetch" href="/assets/js/32.15b2602d.js"><link rel="prefetch" href="/assets/js/33.4c3ecaed.js"><link rel="prefetch" href="/assets/js/34.1417f5b6.js"><link rel="prefetch" href="/assets/js/35.97ca4bbc.js"><link rel="prefetch" href="/assets/js/36.ad5b8ead.js"><link rel="prefetch" href="/assets/js/37.0aa2580b.js"><link rel="prefetch" href="/assets/js/38.5f57282d.js"><link rel="prefetch" href="/assets/js/39.889beaf8.js"><link rel="prefetch" href="/assets/js/4.1627613c.js"><link rel="prefetch" href="/assets/js/40.93b7d08b.js"><link rel="prefetch" href="/assets/js/41.c6dc7d52.js"><link rel="prefetch" href="/assets/js/42.0ec76398.js"><link rel="prefetch" href="/assets/js/43.627e86e8.js"><link rel="prefetch" href="/assets/js/44.a632cfab.js"><link rel="prefetch" href="/assets/js/45.982d33f0.js"><link rel="prefetch" href="/assets/js/46.58db3894.js"><link rel="prefetch" href="/assets/js/47.1d5c0f8f.js"><link rel="prefetch" href="/assets/js/49.b6c8e635.js"><link rel="prefetch" href="/assets/js/5.0456761f.js"><link rel="prefetch" href="/assets/js/50.a6ec7eef.js"><link rel="prefetch" href="/assets/js/51.288a339c.js"><link rel="prefetch" href="/assets/js/52.713e2c55.js"><link rel="prefetch" href="/assets/js/53.42af9547.js"><link rel="prefetch" href="/assets/js/54.def1c3fb.js"><link rel="prefetch" href="/assets/js/6.47800d07.js"><link rel="prefetch" href="/assets/js/7.af8cf0c6.js"><link rel="prefetch" href="/assets/js/8.6f3b2108.js"><link rel="prefetch" href="/assets/js/9.4136c677.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.a5fc1f3a.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container no-sidebar" data-v-1156296a><div data-v-1156296a><div id="loader-wrapper" class="loading-wrapper" data-v-d48f4d20 data-v-1156296a data-v-1156296a><div class="loader-main" data-v-d48f4d20><div data-v-d48f4d20></div><div data-v-d48f4d20></div><div data-v-d48f4d20></div><div data-v-d48f4d20></div></div> <!----> <!----></div> <div class="password-shadow password-wrapper-out" style="display:none;" data-v-4e82dffc data-v-1156296a data-v-1156296a><h3 class="title" data-v-4e82dffc data-v-4e82dffc>Liaowq</h3> <p class="description" data-v-4e82dffc data-v-4e82dffc>前端工程师，记录学习的脚步</p> <label id="box" class="inputBox" data-v-4e82dffc data-v-4e82dffc><input type="password" value="" data-v-4e82dffc> <span data-v-4e82dffc>Konck! Knock!</span> <button data-v-4e82dffc>OK</button></label> <div class="footer" data-v-4e82dffc data-v-4e82dffc><span data-v-4e82dffc><i class="iconfont reco-theme" data-v-4e82dffc></i> <a target="blank" href="https://vuepress-theme-reco.recoluan.com" data-v-4e82dffc>vuePress-theme-reco</a></span> <span data-v-4e82dffc><i class="iconfont reco-copyright" data-v-4e82dffc></i> <a data-v-4e82dffc><span data-v-4e82dffc>Liaowq</span>
+            
+          <!---->
+          2021
+        </a></span></div></div> <div class="hide" data-v-1156296a><header class="navbar" data-v-1156296a><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><!----> <span class="site-name">Liaowq</span></a> <div class="links"><!----> <div class="search-box"><i class="iconfont reco-search"></i> <input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/" class="nav-link"><i class="undefined"></i>
+  主页
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-category"></i>
+      分类
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/categories/ES6/" class="nav-link"><i class="undefined"></i>
+  ES6
+</a></li><li class="dropdown-item"><!----> <a href="/categories/工具/" class="nav-link"><i class="undefined"></i>
+  工具
+</a></li><li class="dropdown-item"><!----> <a href="/categories/mac/" class="nav-link"><i class="undefined"></i>
+  mac
+</a></li><li class="dropdown-item"><!----> <a href="/categories/日常笔记/" class="nav-link"><i class="undefined"></i>
+  日常笔记
+</a></li><li class="dropdown-item"><!----> <a href="/categories/零散笔记/" class="nav-link"><i class="undefined"></i>
+  零散笔记
+</a></li><li class="dropdown-item"><!----> <a href="/categories/TypeScript/" class="nav-link"><i class="undefined"></i>
+  TypeScript
+</a></li><li class="dropdown-item"><!----> <a href="/categories/日常记录/" class="nav-link"><i class="undefined"></i>
+  日常记录
+</a></li><li class="dropdown-item"><!----> <a href="/categories/应届生培训/" class="nav-link"><i class="undefined"></i>
+  应届生培训
+</a></li><li class="dropdown-item"><!----> <a href="/categories/团队文档/" class="nav-link"><i class="undefined"></i>
+  团队文档
+</a></li><li class="dropdown-item"><!----> <a href="/categories/vue/" class="nav-link"><i class="undefined"></i>
+  vue
+</a></li></ul></div></div><div class="nav-item"><a href="/tag/" class="nav-link"><i class="iconfont reco-tag"></i>
+  标签
+</a></div><div class="nav-item"><a href="/timeline/" class="nav-link"><i class="iconfont reco-date"></i>
+  动态
+</a></div> <a href="https://github.com/LuffyLiao/LuffyLiao.github.io" target="_blank" rel="noopener noreferrer" class="repo-link"><i class="iconfont reco-github"></i>
+    GitHub
+    <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></nav></div></header> <div class="sidebar-mask" data-v-1156296a></div> <aside class="sidebar" data-v-1156296a><div class="personal-info-wrapper" data-v-828910c6 data-v-1156296a><img src="/logo.png" alt="author-avatar" class="personal-img" data-v-828910c6> <h3 class="name" data-v-828910c6>
+    Liaowq
+  </h3> <div class="num" data-v-828910c6><div data-v-828910c6><h3 data-v-828910c6>43</h3> <h6 data-v-828910c6>Articles</h6></div> <div data-v-828910c6><h3 data-v-828910c6>16</h3> <h6 data-v-828910c6>Tags</h6></div></div> <ul class="social-links" data-v-828910c6><li class="social-item" data-v-828910c6><i class="iconfont reco-github" style="color:#f8b26a;" data-v-828910c6></i></li><li class="social-item" data-v-828910c6><i class="iconfont reco-mail" style="color:#f47e60;" data-v-828910c6></i></li></ul> <hr data-v-828910c6></div> <nav class="nav-links"><div class="nav-item"><a href="/" class="nav-link"><i class="undefined"></i>
+  主页
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-category"></i>
+      分类
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/categories/ES6/" class="nav-link"><i class="undefined"></i>
+  ES6
+</a></li><li class="dropdown-item"><!----> <a href="/categories/工具/" class="nav-link"><i class="undefined"></i>
+  工具
+</a></li><li class="dropdown-item"><!----> <a href="/categories/mac/" class="nav-link"><i class="undefined"></i>
+  mac
+</a></li><li class="dropdown-item"><!----> <a href="/categories/日常笔记/" class="nav-link"><i class="undefined"></i>
+  日常笔记
+</a></li><li class="dropdown-item"><!----> <a href="/categories/零散笔记/" class="nav-link"><i class="undefined"></i>
+  零散笔记
+</a></li><li class="dropdown-item"><!----> <a href="/categories/TypeScript/" class="nav-link"><i class="undefined"></i>
+  TypeScript
+</a></li><li class="dropdown-item"><!----> <a href="/categories/日常记录/" class="nav-link"><i class="undefined"></i>
+  日常记录
+</a></li><li class="dropdown-item"><!----> <a href="/categories/应届生培训/" class="nav-link"><i class="undefined"></i>
+  应届生培训
+</a></li><li class="dropdown-item"><!----> <a href="/categories/团队文档/" class="nav-link"><i class="undefined"></i>
+  团队文档
+</a></li><li class="dropdown-item"><!----> <a href="/categories/vue/" class="nav-link"><i class="undefined"></i>
+  vue
+</a></li></ul></div></div><div class="nav-item"><a href="/tag/" class="nav-link"><i class="iconfont reco-tag"></i>
+  标签
+</a></div><div class="nav-item"><a href="/timeline/" class="nav-link"><i class="iconfont reco-date"></i>
+  动态
+</a></div> <a href="https://github.com/LuffyLiao/LuffyLiao.github.io" target="_blank" rel="noopener noreferrer" class="repo-link"><i class="iconfont reco-github"></i>
+    GitHub
+    <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></nav> <!----> </aside> <div class="password-shadow password-wrapper-in" style="display:none;" data-v-4e82dffc data-v-1156296a><h3 class="title" data-v-4e82dffc data-v-4e82dffc>ts高级用法进阶</h3> <!----> <label id="box" class="inputBox" data-v-4e82dffc data-v-4e82dffc><input type="password" value="" data-v-4e82dffc> <span data-v-4e82dffc>Konck! Knock!</span> <button data-v-4e82dffc>OK</button></label> <div class="footer" data-v-4e82dffc data-v-4e82dffc><span data-v-4e82dffc><i class="iconfont reco-theme" data-v-4e82dffc></i> <a target="blank" href="https://vuepress-theme-reco.recoluan.com" data-v-4e82dffc>vuePress-theme-reco</a></span> <span data-v-4e82dffc><i class="iconfont reco-copyright" data-v-4e82dffc></i> <a data-v-4e82dffc><span data-v-4e82dffc>Liaowq</span>
+            
+          <!---->
+          2021
+        </a></span></div></div> <div data-v-1156296a><main class="page"><section><div class="page-title"><h1 class="title">ts高级用法进阶</h1> <div data-v-1ff7123e><i class="iconfont reco-account" data-v-1ff7123e><span data-v-1ff7123e>Liaowq</span></i> <i class="iconfont reco-date" data-v-1ff7123e><span data-v-1ff7123e>8/17/2021</span></i> <!----> <i class="tags iconfont reco-tag" data-v-1ff7123e><span class="tag-item" data-v-1ff7123e>TypeScript</span></i></div></div> <div class="theme-reco-content content__default"><h2 id=""><a href="#" class="header-anchor">#</a> <img src="https://cdn.nlark.com/yuque/0/2021/png/543189/1619155106013-64438be7-fe96-44eb-96b6-cb26181146fd.png#clientId=u76df4b83-bff6-4&amp;from=ui&amp;id=ljkQc&amp;margin=%5Bobject%20Object%5D&amp;name=ts-type-program.png&amp;originHeight=704&amp;originWidth=1564&amp;originalType=binary&amp;size=73024&amp;status=done&amp;style=none&amp;taskId=u5232ca87-47ad-4164-b9fc-cf308b8a9ef" alt="ts-type-program.png"></h2> <h2 id="前言"><a href="#前言" class="header-anchor">#</a> 前言</h2> <p><strong>本次分享主要通过口述来讲解及分享Typescript类型编程及相关实践.此文主要用来辅助分享.</strong></p> <blockquote><p>Typescript本身是图灵完备的.这意味着我们可以用它来做条件判断、递归...类型编程顾名思义便是对类型进行编程,本文主要通过介绍 Typescript高级类型和工具类型,带你走进Typescript类型编程.类型编程在实际业务中并不常见,通常在底层框架类库才会有此需求.</p></blockquote> <h2 id="-2"><a href="#-2" class="header-anchor">#</a> <img src="https://cdn.nlark.com/yuque/0/2021/png/543189/1618929979519-66aab4e1-e8a8-432e-b65e-576ce1051294.png#clientId=u0f3ec273-933a-4&amp;from=ui&amp;height=391&amp;id=N8mDL&amp;margin=%5Bobject%20Object%5D&amp;name=ts1.png&amp;originHeight=391&amp;originWidth=546&amp;originalType=binary&amp;size=57935&amp;status=done&amp;style=none&amp;taskId=uc74fc73f-5910-4001-b42f-c5681abcba1&amp;width=546" alt="ts1.png"></h2> <h2 id="类型守卫"><a href="#类型守卫" class="header-anchor">#</a> 类型守卫</h2> <blockquote><p>类型保护允许你使用更小范围下的对象类型。</p></blockquote> <h3 id="typeof"><a href="#typeof" class="header-anchor">#</a> typeof</h3> <div class="language-typescript extra-class"><pre class="language-typescript"><code><span class="token keyword">function</span> <span class="token function">substr</span><span class="token punctuation">(</span>x<span class="token operator">:</span><span class="token builtin">number</span><span class="token operator">|</span><span class="token builtin">string</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+	<span class="token keyword">if</span><span class="token punctuation">(</span><span class="token keyword">typeof</span> x <span class="token operator">===</span> <span class="token string">'string'</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    <span class="token comment">// ts推导出x的类型是string</span>
+  	<span class="token builtin">console</span><span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>x<span class="token punctuation">.</span><span class="token function">substr</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+    <span class="token comment">// 调用非字符串方法报错</span>
+    <span class="token builtin">console</span><span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>x<span class="token punctuation">.</span><span class="token function">toFixed</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment">// Property 'toFixed' does not exist on type 'string'.</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h3 id="instanceof"><a href="#instanceof" class="header-anchor">#</a> instanceof</h3> <div class="language-typescript extra-class"><pre class="language-typescript"><code><span class="token keyword">class</span> <span class="token class-name">Foo</span> <span class="token punctuation">{</span>
+  foo <span class="token operator">=</span> <span class="token number">123</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">class</span> <span class="token class-name">Bar</span> <span class="token punctuation">{</span>
+  bar <span class="token operator">=</span> <span class="token number">123</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">function</span> <span class="token function">doStuff</span><span class="token punctuation">(</span>arg<span class="token operator">:</span> Foo <span class="token operator">|</span> Bar<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span>arg <span class="token keyword">instanceof</span> <span class="token class-name">Foo</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token builtin">console</span><span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>arg<span class="token punctuation">.</span>foo<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// ok</span>
+    <span class="token builtin">console</span><span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>arg<span class="token punctuation">.</span>bar<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// Error</span>
+  <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+    <span class="token comment">// 这个块中，一定是 'Bar'</span>
+    <span class="token builtin">console</span><span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>arg<span class="token punctuation">.</span>foo<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// Error</span>
+    <span class="token builtin">console</span><span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>arg<span class="token punctuation">.</span>bar<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// ok</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token function">doStuff</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">Foo</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token function">doStuff</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">Bar</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre></div><h3 id="in"><a href="#in" class="header-anchor">#</a> in</h3> <div class="language-typescript extra-class"><pre class="language-typescript"><code><span class="token keyword">interface</span> <span class="token class-name"><span class="token constant">A</span></span> <span class="token punctuation">{</span>
+  x<span class="token operator">:</span> <span class="token builtin">number</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">interface</span> <span class="token class-name"><span class="token constant">B</span></span> <span class="token punctuation">{</span>
+  y<span class="token operator">:</span> <span class="token builtin">string</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">function</span> <span class="token function">doStuff</span><span class="token punctuation">(</span>q<span class="token operator">:</span> <span class="token constant">A</span> <span class="token operator">|</span> <span class="token constant">B</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token string">'x'</span> <span class="token keyword">in</span> q<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment">// q: A</span>
+  <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+    <span class="token comment">// q: B</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h3 id="is"><a href="#is" class="header-anchor">#</a> is</h3> <blockquote><p>用来判断一个变量是否属于某个接口或类型,可以有效地缩小类型范围.常被用于限制返回值类型.</p></blockquote> <p>** 为什么使用is限制返回值类型,而不直接使用boolean类型 ? **👇</p> <div class="language-typescript extra-class"><pre class="language-typescript"><code><span class="token comment">//boolean</span>
+
+<span class="token keyword">const</span> isString <span class="token operator">=</span> <span class="token punctuation">(</span>val<span class="token operator">:</span> <span class="token builtin">unknown</span><span class="token punctuation">)</span><span class="token operator">:</span> <span class="token builtin">boolean</span> <span class="token operator">=&gt;</span> <span class="token keyword">typeof</span> val <span class="token operator">===</span> <span class="token string">&quot;string&quot;</span><span class="token punctuation">;</span>
+
+<span class="token keyword">function</span> <span class="token function">endsWith</span><span class="token punctuation">(</span>val<span class="token operator">:</span> <span class="token builtin">unknown</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token function">isString</span><span class="token punctuation">(</span>val<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+     val<span class="token punctuation">.</span><span class="token function">endsWith</span><span class="token punctuation">(</span><span class="token string">&quot;1&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 编译时报错: Object is of type 'unknown'.</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">function</span> <span class="token function">toFixed</span><span class="token punctuation">(</span>val<span class="token operator">:</span><span class="token builtin">any</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+  <span class="token comment">// 编译时不会报错,但在运行时报错</span>
+  <span class="token keyword">if</span><span class="token punctuation">(</span><span class="token function">isString</span><span class="token punctuation">(</span>val<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    val<span class="token punctuation">.</span><span class="token function">toFixed</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span> 
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span> 
+
+</code></pre></div><div class="language-typescript extra-class"><pre class="language-typescript"><code><span class="token comment">// is string</span>
+
+<span class="token keyword">const</span> isString <span class="token operator">=</span> <span class="token punctuation">(</span>val<span class="token operator">:</span> <span class="token builtin">unknown</span><span class="token punctuation">)</span><span class="token operator">:</span> val <span class="token keyword">is</span> <span class="token builtin">string</span> <span class="token operator">=&gt;</span> <span class="token keyword">typeof</span> val <span class="token operator">===</span> <span class="token string">&quot;string&quot;</span><span class="token punctuation">;</span>
+
+<span class="token keyword">function</span> <span class="token function">endsWith</span><span class="token punctuation">(</span>val<span class="token operator">:</span> <span class="token builtin">unknown</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token function">isString</span><span class="token punctuation">(</span>val<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+     val<span class="token punctuation">.</span><span class="token function">endsWith</span><span class="token punctuation">(</span><span class="token string">&quot;1&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 此时val被推断为string类型,可正常调用endsWith方法</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">function</span> <span class="token function">toFixed</span><span class="token punctuation">(</span>val<span class="token operator">:</span><span class="token builtin">any</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+  <span class="token keyword">if</span><span class="token punctuation">(</span><span class="token function">isString</span><span class="token punctuation">(</span>val<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    <span class="token comment">// 编译时报错,避免运行时错误</span>
+    val<span class="token punctuation">.</span><span class="token function">toFixed</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span> <span class="token comment">// Property 'toFixed' does not exist on type 'String'</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h2 id="类型断言"><a href="#类型断言" class="header-anchor">#</a> 类型断言</h2> <blockquote><p>TypeScript 允许你覆盖它的推断，并且能以你任何你想要的方式分析它，这种机制被称为「类型断言」。TypeScript 类型断言用来告诉编译器你比它更了解这个类型，并且它不应该再发出错误。<strong>类型断言纯粹是一个编译时语法。</strong></p></blockquote> <div class="language-typescript extra-class"><pre class="language-typescript"><code><span class="token keyword">interface</span> <span class="token class-name">Foo</span> <span class="token punctuation">{</span>
+    bar<span class="token operator">:</span><span class="token builtin">number</span><span class="token punctuation">;</span>
+    bas<span class="token operator">:</span><span class="token builtin">string</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">// as Foo</span>
+<span class="token keyword">const</span> foo <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token punctuation">}</span> <span class="token keyword">as</span> Foo<span class="token punctuation">;</span>
+<span class="token comment">// &lt;Foo&gt;</span>
+<span class="token keyword">const</span> foo1 <span class="token operator">=</span> <span class="token operator">&lt;</span>Foo<span class="token operator">&gt;</span><span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+<span class="token builtin">console</span><span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>foo<span class="token punctuation">.</span>bar<span class="token punctuation">,</span>foo<span class="token punctuation">.</span>bas<span class="token punctuation">)</span>
+<span class="token builtin">console</span><span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>foo1<span class="token punctuation">.</span>bar<span class="token punctuation">,</span>foo1<span class="token punctuation">.</span>bas<span class="token punctuation">)</span>
+</code></pre></div><blockquote><p>类型断言被认为是有害的,它只能<strong>欺骗Typescript编译器,无法避免运行时错误.</strong></p></blockquote> <div class="language-typescript extra-class"><pre class="language-typescript"><code><span class="token keyword">function</span> <span class="token function">handler</span><span class="token punctuation">(</span>x<span class="token operator">:</span><span class="token builtin">number</span><span class="token operator">|</span><span class="token builtin">string</span><span class="token punctuation">)</span><span class="token operator">:</span><span class="token builtin">number</span><span class="token operator">|</span><span class="token builtin">string</span><span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token punctuation">(</span>x <span class="token keyword">as</span> <span class="token builtin">number</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">toFixed</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+
+<span class="token function">handler</span><span class="token punctuation">(</span><span class="token string">&quot;1.2&quot;</span><span class="token punctuation">)</span> <span class="token comment">// 编译时不会报错,运行时报错:Uncaught TypeError: x.toFixed is not a function</span>
+</code></pre></div><h3 id="非空断言"><a href="#非空断言" class="header-anchor">#</a> 非空断言</h3> <blockquote><p>使用非空断言操作符 &quot;!&quot; 可以断言操作对象是非null和非undefined类型.</p></blockquote> <div class="language-typescript extra-class"><pre class="language-typescript"><code>
+<span class="token keyword">function</span> <span class="token function">formatStr</span><span class="token punctuation">(</span>str<span class="token operator">:</span><span class="token builtin">string</span> <span class="token operator">|</span> <span class="token keyword">undefined</span><span class="token punctuation">)</span><span class="token operator">:</span><span class="token builtin">string</span><span class="token punctuation">{</span>
+  <span class="token comment">// return str.slice(2) // Object is possibly 'undefined'.</span>
+  <span class="token keyword">return</span> str<span class="token operator">!</span><span class="token punctuation">.</span><span class="token function">slice</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+
+</code></pre></div><h2 id="高级类型"><a href="#高级类型" class="header-anchor">#</a> 高级类型</h2> <h3 id="交叉类型-intersection-types"><a href="#交叉类型-intersection-types" class="header-anchor">#</a> 交叉类型 (Intersection Types)</h3> <blockquote><p>交叉类型是将多个类型合并为一个类型。这让我们可以把多种类型叠加到一起成为一种类型,它**包含了所需的所有类型的特性。**表示方法是 A &amp; B</p></blockquote> <div class="language-typescript extra-class"><pre class="language-typescript"><code><span class="token keyword">interface</span> <span class="token class-name">IPerson</span> <span class="token punctuation">{</span>
+  name<span class="token operator">:</span> <span class="token builtin">string</span><span class="token punctuation">;</span>
+  age<span class="token operator">:</span> <span class="token builtin">number</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">interface</span> <span class="token class-name">IStudent</span> <span class="token punctuation">{</span>
+  grade<span class="token operator">:</span> <span class="token builtin">number</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">const</span> <span class="token function-variable function">getBio</span> <span class="token operator">=</span> <span class="token punctuation">(</span>user<span class="token operator">:</span> IPerson <span class="token operator">&amp;</span> IStudent<span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+  <span class="token keyword">return</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">His name is </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>user<span class="token punctuation">.</span>name<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">, I am </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>user<span class="token punctuation">.</span>age<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string"> years old and a student of Grade </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>user<span class="token punctuation">.</span>grade<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">.</span><span class="token template-punctuation string">`</span></span>
+<span class="token punctuation">}</span>
+<span class="token function">getBio</span><span class="token punctuation">(</span><span class="token punctuation">{</span>name<span class="token operator">:</span> <span class="token string">&quot;null&quot;</span><span class="token punctuation">,</span> age<span class="token operator">:</span> <span class="token number">12</span><span class="token punctuation">,</span> grade<span class="token operator">:</span> <span class="token number">6</span><span class="token punctuation">}</span><span class="token punctuation">)</span>
+</code></pre></div><h3 id="联合类型-union-types"><a href="#联合类型-union-types" class="header-anchor">#</a> 联合类型 (Union Types)</h3> <blockquote><p>联合类型</p></blockquote> <div class="language-typescript extra-class"><pre class="language-typescript"><code><span class="token keyword">interface</span> <span class="token class-name">IPerson</span> <span class="token punctuation">{</span>
+  name<span class="token operator">:</span> <span class="token builtin">string</span><span class="token punctuation">;</span>
+  age<span class="token operator">:</span> <span class="token builtin">number</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">interface</span> <span class="token class-name">IStudent</span> <span class="token punctuation">{</span>
+  grade<span class="token operator">:</span> <span class="token builtin">number</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">const</span> <span class="token function-variable function">getBio</span> <span class="token operator">=</span> <span class="token punctuation">(</span>user<span class="token operator">:</span> IPerson <span class="token operator">|</span> IStudent<span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+    <span class="token keyword">if</span><span class="token punctuation">(</span><span class="token string">'grade'</span> <span class="token keyword">in</span> user<span class="token punctuation">)</span><span class="token punctuation">{</span>
+        <span class="token builtin">console</span><span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>user<span class="token punctuation">.</span>grade<span class="token punctuation">)</span>
+    <span class="token punctuation">}</span><span class="token keyword">else</span><span class="token punctuation">{</span>
+        <span class="token builtin">console</span><span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>user<span class="token punctuation">.</span>name<span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+<span class="token function">getBio</span><span class="token punctuation">(</span><span class="token punctuation">{</span>name<span class="token operator">:</span> <span class="token string">&quot;null&quot;</span><span class="token punctuation">,</span> age<span class="token operator">:</span> <span class="token number">12</span><span class="token punctuation">,</span> grade<span class="token operator">:</span> <span class="token number">6</span><span class="token punctuation">}</span><span class="token punctuation">)</span>
+</code></pre></div><h3 id="索引类型-indexable-types"><a href="#索引类型-indexable-types" class="header-anchor">#</a> 索引类型 (Indexable Types)</h3> <p>我们先来看一道场景题:
+以下是一个get函数,用来获取某个对象的属性值.如何在Typescript中实现该函数呢 ?</p> <div class="language-typescript extra-class"><pre class="language-typescript"><code><span class="token comment">// 初级选手</span>
+
+<span class="token keyword">interface</span> <span class="token class-name">Obj</span> <span class="token punctuation">{</span>
+    <span class="token punctuation">[</span>index<span class="token operator">:</span><span class="token builtin">string</span><span class="token punctuation">]</span><span class="token operator">:</span><span class="token builtin">string</span><span class="token operator">|</span><span class="token builtin">number</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">function</span> <span class="token function">get</span><span class="token punctuation">(</span>o<span class="token operator">:</span> Obj<span class="token punctuation">,</span> name<span class="token operator">:</span> <span class="token builtin">string</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">return</span> o<span class="token punctuation">[</span>name<span class="token punctuation">]</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">const</span> person <span class="token operator">=</span> <span class="token punctuation">{</span>
+    name<span class="token operator">:</span><span class="token string">'w'</span><span class="token punctuation">,</span>
+    age<span class="token operator">:</span><span class="token number">18</span>
+<span class="token punctuation">}</span>
+
+<span class="token function">get</span><span class="token punctuation">(</span>person<span class="token punctuation">,</span><span class="token string">'name'</span><span class="token punctuation">)</span>
+</code></pre></div><p>以上这个实现看起来好像没问题,那其实存在一些缺点:</p> <ol><li>无法确认返回类型</li> <li>无法对key做约束</li></ol> <h4 id="keyof操作符"><a href="#keyof操作符" class="header-anchor">#</a> keyof操作符</h4> <blockquote><p>Typescript允许我们遍历某种属性的类型,并通过keyof操作符提取其属性名称.它可以获取某种类型的所有键,返回类型是联合类型.</p></blockquote> <div class="language-typescript extra-class"><pre class="language-typescript"><code><span class="token keyword">interface</span> <span class="token class-name">Person</span> <span class="token punctuation">{</span>
+    name<span class="token operator">:</span><span class="token builtin">string</span><span class="token punctuation">;</span>
+    age<span class="token operator">:</span><span class="token builtin">number</span><span class="token punctuation">;</span>
+    height<span class="token operator">:</span><span class="token builtin">number</span><span class="token punctuation">;</span>
+    weight<span class="token operator">:</span><span class="token builtin">number</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">type</span> <span class="token class-name">PersonNames</span> <span class="token operator">=</span> <span class="token keyword">keyof</span> Person <span class="token comment">// &quot;name&quot; | &quot;age&quot; | &quot;height&quot; | &quot;weight&quot;</span>
+</code></pre></div><h4 id="类型访问操作符"><a href="#类型访问操作符" class="header-anchor">#</a> 类型访问操作符</h4> <blockquote><p>与js访问属性值的操作类似,Typescript访问类型的操作符也是通过[]来访问,也就是T[K].</p></blockquote> <div class="language-typescript extra-class"><pre class="language-typescript"><code><span class="token keyword">interface</span> <span class="token class-name">Person</span> <span class="token punctuation">{</span>
+    name<span class="token operator">:</span><span class="token builtin">string</span><span class="token punctuation">;</span>
+    age<span class="token operator">:</span><span class="token builtin">number</span><span class="token punctuation">;</span>
+    height<span class="token operator">:</span><span class="token builtin">number</span><span class="token punctuation">;</span>
+    weight<span class="token operator">:</span><span class="token builtin">number</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">type</span> <span class="token class-name">PersonNames</span> <span class="token operator">=</span> <span class="token keyword">keyof</span> Person <span class="token comment">// &quot;name&quot; | &quot;age&quot; | &quot;height&quot; | &quot;weight&quot;</span>
+
+<span class="token keyword">type</span> <span class="token class-name">PersonTypes</span> <span class="token operator">=</span> Person<span class="token punctuation">[</span>PersonNames<span class="token punctuation">]</span>  <span class="token comment">// string | number</span>
+</code></pre></div><p>了解完上面两个操作符,我们再回头来实现get函数:</p> <div class="language-typescript extra-class"><pre class="language-typescript"><code><span class="token keyword">function</span> <span class="token generic-function"><span class="token function">get</span><span class="token generic class-name"><span class="token operator">&lt;</span><span class="token constant">T</span><span class="token punctuation">,</span><span class="token constant">K</span> <span class="token keyword">extends</span> <span class="token keyword">keyof</span> <span class="token constant">T</span><span class="token operator">&gt;</span></span></span><span class="token punctuation">(</span>o<span class="token operator">:</span> <span class="token constant">T</span><span class="token punctuation">,</span> name<span class="token operator">:</span> <span class="token constant">K</span><span class="token punctuation">)</span><span class="token operator">:</span><span class="token constant">T</span><span class="token punctuation">[</span><span class="token constant">K</span><span class="token punctuation">]</span> <span class="token punctuation">{</span>
+  <span class="token keyword">return</span> o<span class="token punctuation">[</span>name<span class="token punctuation">]</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">const</span> person <span class="token operator">=</span> <span class="token punctuation">{</span>
+    name<span class="token operator">:</span><span class="token string">'w'</span><span class="token punctuation">,</span>
+    age<span class="token operator">:</span><span class="token number">18</span>
+<span class="token punctuation">}</span>
+
+<span class="token function">get</span><span class="token punctuation">(</span>person<span class="token punctuation">,</span><span class="token string">'name'</span><span class="token punctuation">)</span>  <span class="token comment">// returnType: string</span>
+<span class="token function">get</span><span class="token punctuation">(</span>person<span class="token punctuation">,</span><span class="token string">'age'</span><span class="token punctuation">)</span>   <span class="token comment">// returnType: number</span>
+<span class="token function">get</span><span class="token punctuation">(</span>person<span class="token punctuation">,</span><span class="token string">'age1'</span><span class="token punctuation">)</span>  <span class="token comment">// Error: Argument of type '&quot;age1&quot;' is not assignable to parameter of type '&quot;name&quot; | &quot;age&quot;'.</span>
+</code></pre></div><h3 id="映射类型-mapped-types"><a href="#映射类型-mapped-types" class="header-anchor">#</a> 映射类型 (Mapped Types)</h3> <blockquote><p>映射类型的语法是 [K in Keys]:  ,其中的in可以理解为js中的 for ...in ,K 就是 key.</p></blockquote> <div class="language-typescript extra-class"><pre class="language-typescript"><code><span class="token keyword">interface</span> <span class="token class-name">Person</span> <span class="token punctuation">{</span>
+    name<span class="token operator">:</span><span class="token builtin">string</span>
+    age<span class="token operator">:</span><span class="token builtin">number</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">/**
+ * type P = {
+    name?: string | undefined;
+    age?: number | undefined;
+   }
+*/</span>
+<span class="token keyword">type</span> <span class="token class-name"><span class="token constant">P</span></span> <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token punctuation">[</span><span class="token constant">K</span> <span class="token keyword">in</span> <span class="token keyword">keyof</span> Person<span class="token punctuation">]</span><span class="token operator">?</span><span class="token operator">:</span>Person<span class="token punctuation">[</span><span class="token constant">K</span><span class="token punctuation">]</span><span class="token punctuation">}</span>
+<span class="token keyword">type</span> <span class="token class-name">Partial1<span class="token operator">&lt;</span><span class="token constant">T</span><span class="token operator">&gt;</span></span> <span class="token operator">=</span><span class="token punctuation">{</span><span class="token punctuation">[</span><span class="token constant">K</span> <span class="token keyword">in</span> <span class="token keyword">keyof</span> <span class="token constant">T</span><span class="token punctuation">]</span><span class="token operator">?</span><span class="token operator">:</span><span class="token constant">T</span><span class="token punctuation">[</span><span class="token constant">K</span><span class="token punctuation">]</span><span class="token punctuation">}</span>
+<span class="token keyword">type</span> <span class="token class-name"><span class="token constant">P2</span></span> <span class="token operator">=</span> Partial1<span class="token operator">&lt;</span>Person<span class="token operator">&gt;</span>
+
+</code></pre></div><h3 id="条件类型-conditional-types"><a href="#条件类型-conditional-types" class="header-anchor">#</a> 条件类型 (Conditional Types)</h3> <blockquote><p>Typescript中的条件类型有点类似于js中的三元条件运算符.以一个条件表达式进行类型关系检测,从而在两种类型中选择其一: T extends U ? X: Y</p></blockquote> <p>设计一个类型工具Diff&lt;T,U&gt;,我们要找出T类型中U不包含的部分:</p> <div class="language-typescript extra-class"><pre class="language-typescript"><code><span class="token keyword">type</span> <span class="token class-name">Diff<span class="token operator">&lt;</span><span class="token constant">T</span><span class="token punctuation">,</span><span class="token constant">U</span><span class="token operator">&gt;</span></span> <span class="token operator">=</span> <span class="token constant">T</span> <span class="token keyword">extends</span> <span class="token class-name"><span class="token constant">U</span></span> <span class="token operator">?</span> <span class="token builtin">never</span><span class="token operator">:</span> <span class="token constant">T</span><span class="token punctuation">;</span>
+
+<span class="token keyword">type</span> <span class="token class-name"><span class="token constant">D</span></span> <span class="token operator">=</span> Diff<span class="token operator">&lt;</span><span class="token string">'a'</span><span class="token operator">|</span><span class="token string">'b'</span><span class="token operator">|</span><span class="token string">'c'</span><span class="token operator">|</span><span class="token string">'d'</span><span class="token punctuation">,</span><span class="token string">'a'</span><span class="token operator">|</span><span class="token string">'d'</span><span class="token operator">&gt;</span> <span class="token comment">//  &quot;b&quot; | &quot;c&quot;</span>
+</code></pre></div><h3 id="infer关键字"><a href="#infer关键字" class="header-anchor">#</a> infer关键字</h3> <blockquote><p>infer表示在extends 条件语句中待推断的类型变量.</p></blockquote> <div class="language-typescript extra-class"><pre class="language-typescript"><code><span class="token keyword">type</span> <span class="token class-name">ParamType<span class="token operator">&lt;</span><span class="token constant">T</span><span class="token operator">&gt;</span></span> <span class="token operator">=</span> <span class="token constant">T</span> <span class="token keyword">extends</span> <span class="token punctuation">(</span>param<span class="token operator">:</span> <span class="token keyword">infer</span> <span class="token constant">P</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token builtin">any</span> <span class="token operator">?</span> <span class="token constant">P</span> <span class="token operator">:</span> <span class="token constant">T</span><span class="token punctuation">;</span>
+
+<span class="token keyword">interface</span> <span class="token class-name">User</span> <span class="token punctuation">{</span>
+  name<span class="token operator">:</span> <span class="token builtin">string</span><span class="token punctuation">;</span>
+  age<span class="token operator">:</span> <span class="token builtin">number</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">type</span> <span class="token class-name">Func</span> <span class="token operator">=</span> <span class="token punctuation">(</span>user<span class="token operator">:</span> User<span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token keyword">void</span><span class="token punctuation">;</span>
+
+<span class="token keyword">type</span> <span class="token class-name">Param</span> <span class="token operator">=</span> ParamType<span class="token operator">&lt;</span>Func<span class="token operator">&gt;</span><span class="token punctuation">;</span> <span class="token comment">// User</span>
+<span class="token keyword">type</span> <span class="token class-name"><span class="token constant">AA</span></span> <span class="token operator">=</span> ParamType<span class="token operator">&lt;</span><span class="token builtin">string</span><span class="token operator">&gt;</span><span class="token punctuation">;</span> <span class="token comment">// string</span>
+</code></pre></div><h2 id="工具类型"><a href="#工具类型" class="header-anchor">#</a> 工具类型</h2> <h3 id="partial"><a href="#partial" class="header-anchor">#</a> Partial</h3> <div class="language-typescript extra-class"><pre class="language-typescript"><code><span class="token keyword">type</span> <span class="token class-name">TypedPartial<span class="token operator">&lt;</span><span class="token constant">T</span><span class="token operator">&gt;</span></span> <span class="token operator">=</span> <span class="token punctuation">{</span> <span class="token punctuation">[</span><span class="token constant">P</span> <span class="token keyword">in</span> <span class="token keyword">keyof</span> <span class="token constant">T</span><span class="token punctuation">]</span><span class="token operator">?</span><span class="token operator">:</span> <span class="token constant">T</span><span class="token punctuation">[</span><span class="token constant">P</span><span class="token punctuation">]</span> <span class="token punctuation">}</span><span class="token punctuation">;</span>
+</code></pre></div><h3 id="required"><a href="#required" class="header-anchor">#</a> Required</h3> <div class="language-typescript extra-class"><pre class="language-typescript"><code><span class="token keyword">type</span> <span class="token class-name">TypedRequired<span class="token operator">&lt;</span><span class="token constant">T</span><span class="token operator">&gt;</span></span> <span class="token operator">=</span> <span class="token punctuation">{</span> <span class="token punctuation">[</span><span class="token constant">P</span> <span class="token keyword">in</span> <span class="token keyword">keyof</span> <span class="token constant">T</span><span class="token punctuation">]</span><span class="token operator">-</span><span class="token operator">?</span><span class="token operator">:</span> <span class="token constant">T</span><span class="token punctuation">[</span><span class="token constant">P</span><span class="token punctuation">]</span> <span class="token punctuation">}</span><span class="token punctuation">;</span>
+</code></pre></div><h3 id="readonly"><a href="#readonly" class="header-anchor">#</a> Readonly</h3> <div class="language-typescript extra-class"><pre class="language-typescript"><code><span class="token keyword">type</span> <span class="token class-name">TypedReadonly<span class="token operator">&lt;</span><span class="token constant">T</span><span class="token operator">&gt;</span></span> <span class="token operator">=</span> <span class="token punctuation">{</span> <span class="token keyword">readonly</span> <span class="token punctuation">[</span><span class="token constant">P</span> <span class="token keyword">in</span> <span class="token keyword">keyof</span> <span class="token constant">T</span><span class="token punctuation">]</span><span class="token operator">:</span> <span class="token constant">T</span><span class="token punctuation">[</span><span class="token constant">P</span><span class="token punctuation">]</span> <span class="token punctuation">}</span><span class="token punctuation">;</span>
+</code></pre></div><h3 id="extract"><a href="#extract" class="header-anchor">#</a> Extract</h3> <div class="language-typescript extra-class"><pre class="language-typescript"><code><span class="token keyword">type</span> <span class="token class-name">TypedExtract<span class="token operator">&lt;</span><span class="token constant">T</span><span class="token punctuation">,</span> <span class="token constant">U</span><span class="token operator">&gt;</span></span> <span class="token operator">=</span> <span class="token constant">T</span> <span class="token keyword">extends</span> <span class="token class-name"><span class="token constant">U</span></span> <span class="token operator">?</span> <span class="token constant">T</span> <span class="token operator">:</span> <span class="token builtin">never</span><span class="token punctuation">;</span>
+</code></pre></div><h3 id="exclude"><a href="#exclude" class="header-anchor">#</a> Exclude</h3> <div class="language-typescript extra-class"><pre class="language-typescript"><code><span class="token keyword">type</span> <span class="token class-name">TypedExclude<span class="token operator">&lt;</span><span class="token constant">T</span><span class="token punctuation">,</span> <span class="token constant">U</span><span class="token operator">&gt;</span></span> <span class="token operator">=</span> <span class="token constant">T</span> <span class="token keyword">extends</span> <span class="token class-name"><span class="token constant">U</span></span> <span class="token operator">?</span> <span class="token builtin">never</span> <span class="token operator">:</span> <span class="token constant">T</span><span class="token punctuation">;</span>
+</code></pre></div><h3 id="record"><a href="#record" class="header-anchor">#</a> Record</h3> <div class="language-typescript extra-class"><pre class="language-typescript"><code><span class="token keyword">type</span> <span class="token class-name">TypedRecord<span class="token operator">&lt;</span><span class="token constant">K</span> <span class="token keyword">extends</span> <span class="token keyword">keyof</span> <span class="token builtin">any</span><span class="token punctuation">,</span> <span class="token constant">T</span><span class="token operator">&gt;</span></span> <span class="token operator">=</span> <span class="token punctuation">{</span> <span class="token punctuation">[</span><span class="token constant">P</span> <span class="token keyword">in</span> <span class="token constant">K</span><span class="token punctuation">]</span><span class="token operator">:</span> <span class="token constant">T</span> <span class="token punctuation">}</span><span class="token punctuation">;</span>
+</code></pre></div><h3 id="pick"><a href="#pick" class="header-anchor">#</a> Pick</h3> <div class="language-typescript extra-class"><pre class="language-typescript"><code><span class="token keyword">type</span> <span class="token class-name">TypedPick<span class="token operator">&lt;</span><span class="token constant">T</span><span class="token punctuation">,</span> <span class="token constant">K</span> <span class="token keyword">extends</span> <span class="token keyword">keyof</span> <span class="token constant">T</span><span class="token operator">&gt;</span></span> <span class="token operator">=</span> <span class="token punctuation">{</span> <span class="token punctuation">[</span><span class="token constant">P</span> <span class="token keyword">in</span> <span class="token constant">K</span><span class="token punctuation">]</span><span class="token operator">:</span> <span class="token constant">T</span><span class="token punctuation">[</span><span class="token constant">P</span><span class="token punctuation">]</span> <span class="token punctuation">}</span><span class="token punctuation">;</span>
+</code></pre></div><h3 id="omit"><a href="#omit" class="header-anchor">#</a> Omit</h3> <div class="language-typescript extra-class"><pre class="language-typescript"><code><span class="token keyword">type</span> <span class="token class-name">TypedOmit<span class="token operator">&lt;</span><span class="token constant">T</span><span class="token punctuation">,</span> <span class="token constant">K</span><span class="token operator">&gt;</span></span> <span class="token operator">=</span> Pick<span class="token operator">&lt;</span><span class="token constant">T</span><span class="token punctuation">,</span> Exclude<span class="token operator">&lt;</span><span class="token keyword">keyof</span> <span class="token constant">T</span><span class="token punctuation">,</span> <span class="token constant">K</span><span class="token operator">&gt;&gt;</span><span class="token punctuation">;</span>
+</code></pre></div><h3 id="returntype"><a href="#returntype" class="header-anchor">#</a> ReturnType</h3> <div class="language-typescript extra-class"><pre class="language-typescript"><code><span class="token keyword">type</span> <span class="token class-name">TypedReturnType<span class="token operator">&lt;</span><span class="token constant">T</span><span class="token operator">&gt;</span></span> <span class="token operator">=</span>  <span class="token constant">T</span> <span class="token keyword">extends</span> <span class="token punctuation">(</span><span class="token operator">...</span>args<span class="token operator">:</span><span class="token builtin">any</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token operator">:</span><span class="token keyword">infer</span> <span class="token constant">P</span> <span class="token operator">?</span> <span class="token constant">P</span> <span class="token operator">:</span><span class="token builtin">any</span>
+</code></pre></div><h2 id="vuex-ts-实战"><a href="#vuex-ts-实战" class="header-anchor">#</a> Vuex + Ts 实战</h2> <div class="language-typescript extra-class"><pre class="language-typescript"><code>├── store
+  ├── index<span class="token punctuation">.</span>ts
+  ├── <span class="token keyword">module</span>s
+  │   └── counter<span class="token punctuation">.</span>ts
+  └── <span class="token keyword">type</span>s
+      ├── counter<span class="token punctuation">.</span>ts
+      └── index<span class="token punctuation">.</span>ts
+</code></pre></div><div class="language-typescript extra-class"><pre class="language-typescript"><code><span class="token comment">// index.ts</span>
+<span class="token keyword">import</span> <span class="token punctuation">{</span> createStore <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">&quot;vuex&quot;</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token punctuation">{</span> Store <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">&quot;./types/index&quot;</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token punctuation">{</span> CounterModule <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">&quot;./modules/counter&quot;</span><span class="token punctuation">;</span>
+
+<span class="token keyword">export</span> <span class="token keyword">const</span> store <span class="token operator">=</span> <span class="token function">createStore</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+  <span class="token keyword">module</span>s<span class="token operator">:</span> <span class="token punctuation">{</span>
+    Counter<span class="token operator">:</span> CounterModule<span class="token punctuation">,</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token keyword">export</span> <span class="token keyword">function</span> <span class="token function">useStore</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">:</span> Store <span class="token punctuation">{</span>
+  <span class="token keyword">return</span> store <span class="token keyword">as</span> Store<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre></div><div class="language-typescript extra-class"><pre class="language-typescript"><code><span class="token comment">// modules/counter.ts</span>
+
+<span class="token keyword">import</span> <span class="token punctuation">{</span> MutationTree<span class="token punctuation">,</span> Module<span class="token punctuation">,</span> ActionTree<span class="token punctuation">,</span> GetterTree <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">&quot;vuex&quot;</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token punctuation">{</span> State <span class="token keyword">as</span> RootState <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">&quot;../types/index&quot;</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token punctuation">{</span>
+  State<span class="token punctuation">,</span>
+  MutationTypes<span class="token punctuation">,</span>
+  Mutations<span class="token punctuation">,</span>
+  Actions<span class="token punctuation">,</span>
+  ActionTypes<span class="token punctuation">,</span>
+  Getters<span class="token punctuation">,</span>
+<span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">&quot;../types/counter&quot;</span><span class="token punctuation">;</span>
+
+<span class="token comment">// state</span>
+<span class="token keyword">const</span> state<span class="token operator">:</span> State <span class="token operator">=</span> <span class="token punctuation">{</span>
+  counter<span class="token operator">:</span> <span class="token number">0</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+<span class="token comment">// mutations</span>
+<span class="token keyword">const</span> mutations<span class="token operator">:</span> MutationTree<span class="token operator">&lt;</span>State<span class="token operator">&gt;</span> <span class="token operator">&amp;</span> Mutations <span class="token operator">=</span> <span class="token punctuation">{</span>
+  <span class="token punctuation">[</span>MutationTypes<span class="token punctuation">.</span><span class="token constant">SET_COUNTER</span><span class="token punctuation">]</span><span class="token punctuation">(</span>state<span class="token operator">:</span> State<span class="token punctuation">,</span> payload<span class="token operator">:</span> <span class="token builtin">number</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    state<span class="token punctuation">.</span>counter <span class="token operator">=</span> payload<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+<span class="token comment">// actions</span>
+<span class="token keyword">export</span> <span class="token keyword">const</span> actions<span class="token operator">:</span> ActionTree<span class="token operator">&lt;</span>State<span class="token punctuation">,</span> RootState<span class="token operator">&gt;</span> <span class="token operator">&amp;</span> Actions <span class="token operator">=</span> <span class="token punctuation">{</span>
+  async <span class="token punctuation">[</span>ActionTypes<span class="token punctuation">.</span><span class="token constant">INC_COUNTER</span><span class="token punctuation">]</span><span class="token punctuation">(</span><span class="token punctuation">{</span> commit <span class="token punctuation">}</span><span class="token punctuation">,</span> count<span class="token operator">:</span> <span class="token builtin">number</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token function">commit</span><span class="token punctuation">(</span>MutationTypes<span class="token punctuation">.</span><span class="token constant">SET_COUNTER</span><span class="token punctuation">,</span> state<span class="token punctuation">.</span>counter <span class="token operator">+</span> count<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+<span class="token comment">//getters</span>
+<span class="token keyword">export</span> <span class="token keyword">const</span> getters<span class="token operator">:</span> GetterTree<span class="token operator">&lt;</span>State<span class="token punctuation">,</span> RootState<span class="token operator">&gt;</span> <span class="token operator">&amp;</span> Getters <span class="token operator">=</span> <span class="token punctuation">{</span>
+  <span class="token function-variable function">doubleCounter</span><span class="token operator">:</span> <span class="token punctuation">(</span>state<span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> state<span class="token punctuation">.</span>counter <span class="token operator">*</span> <span class="token number">2</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+<span class="token keyword">export</span> <span class="token keyword">const</span> CounterModule<span class="token operator">:</span> Module<span class="token operator">&lt;</span>State<span class="token punctuation">,</span> RootState<span class="token operator">&gt;</span> <span class="token operator">=</span> <span class="token punctuation">{</span>
+  <span class="token comment">// Namespacing Vuex modules is tricky and hard to type check with typescript.</span>
+  <span class="token comment">// Instead of namespacing, we could create our own namespacing mechanism by</span>
+  <span class="token comment">// prefixing the value of the TypeScript enum with the namespace, e.g.</span>
+  <span class="token comment">// namespaced: true,</span>
+  state<span class="token punctuation">,</span>
+  getters<span class="token punctuation">,</span>
+  mutations<span class="token punctuation">,</span>
+  actions<span class="token punctuation">,</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+</code></pre></div><div class="language-typescript extra-class"><pre class="language-typescript"><code><span class="token comment">// types/counter.ts</span>
+
+<span class="token keyword">import</span> <span class="token punctuation">{</span>
+  Store <span class="token keyword">as</span> VuexStore<span class="token punctuation">,</span>
+  ActionContext<span class="token punctuation">,</span>
+  CommitOptions<span class="token punctuation">,</span>
+  DispatchOptions<span class="token punctuation">,</span>
+<span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">&quot;vuex&quot;</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token punctuation">{</span> State <span class="token keyword">as</span> RootState <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">&quot;./index&quot;</span><span class="token punctuation">;</span>
+
+<span class="token comment">//declare state</span>
+<span class="token keyword">export</span> <span class="token keyword">type</span> <span class="token class-name">State</span> <span class="token operator">=</span> <span class="token punctuation">{</span>
+  counter<span class="token operator">:</span> <span class="token builtin">number</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+<span class="token comment">// mutations and action enums</span>
+<span class="token keyword">export</span> <span class="token keyword">enum</span> MutationTypes <span class="token punctuation">{</span>
+  <span class="token constant">SET_COUNTER</span> <span class="token operator">=</span> <span class="token string">&quot;SET_COUNTER&quot;</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">export</span> <span class="token keyword">enum</span> ActionTypes <span class="token punctuation">{</span>
+  <span class="token constant">INC_COUNTER</span> <span class="token operator">=</span> <span class="token string">&quot;INC_COUNTER&quot;</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">//Mutation Types</span>
+<span class="token keyword">export</span> <span class="token keyword">type</span> <span class="token class-name">Mutations<span class="token operator">&lt;</span><span class="token constant">S</span> <span class="token operator">=</span> State<span class="token operator">&gt;</span></span> <span class="token operator">=</span> <span class="token punctuation">{</span>
+  <span class="token punctuation">[</span>MutationTypes<span class="token punctuation">.</span><span class="token constant">SET_COUNTER</span><span class="token punctuation">]</span><span class="token punctuation">(</span>state<span class="token operator">:</span> <span class="token constant">S</span><span class="token punctuation">,</span> payload<span class="token operator">:</span> <span class="token builtin">number</span><span class="token punctuation">)</span><span class="token operator">:</span> <span class="token keyword">void</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+<span class="token comment">//actions</span>
+<span class="token keyword">export</span> <span class="token keyword">type</span> <span class="token class-name">AugmentedActionContext</span> <span class="token operator">=</span> <span class="token punctuation">{</span>
+  <span class="token generic-function"><span class="token function">commit</span><span class="token generic class-name"><span class="token operator">&lt;</span><span class="token constant">K</span> <span class="token keyword">extends</span> <span class="token keyword">keyof</span> Mutations<span class="token operator">&gt;</span></span></span><span class="token punctuation">(</span>
+    key<span class="token operator">:</span> <span class="token constant">K</span><span class="token punctuation">,</span>
+    payload<span class="token operator">:</span> Parameters<span class="token operator">&lt;</span>Mutations<span class="token punctuation">[</span><span class="token constant">K</span><span class="token punctuation">]</span><span class="token operator">&gt;</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span>
+  <span class="token punctuation">)</span><span class="token operator">:</span> ReturnType<span class="token operator">&lt;</span>Mutations<span class="token punctuation">[</span><span class="token constant">K</span><span class="token punctuation">]</span><span class="token operator">&gt;</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span> <span class="token operator">&amp;</span> Omit<span class="token operator">&lt;</span>ActionContext<span class="token operator">&lt;</span>State<span class="token punctuation">,</span> RootState<span class="token operator">&gt;</span><span class="token punctuation">,</span> <span class="token string">&quot;commit&quot;</span><span class="token operator">&gt;</span><span class="token punctuation">;</span>
+
+<span class="token comment">// actions interface</span>
+<span class="token class-name"><span class="token keyword">export</span></span> <span class="token keyword">interface</span> <span class="token class-name">Actions</span> <span class="token punctuation">{</span>
+  <span class="token punctuation">[</span>ActionTypes<span class="token punctuation">.</span><span class="token constant">INC_COUNTER</span><span class="token punctuation">]</span><span class="token punctuation">(</span>
+    <span class="token punctuation">{</span> commit <span class="token punctuation">}</span><span class="token operator">:</span> AugmentedActionContext<span class="token punctuation">,</span>
+    count<span class="token operator">:</span> <span class="token builtin">number</span>
+  <span class="token punctuation">)</span><span class="token operator">:</span> <span class="token keyword">void</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">// Getters types</span>
+<span class="token keyword">export</span> <span class="token keyword">type</span> <span class="token class-name">Getters</span> <span class="token operator">=</span> <span class="token punctuation">{</span>
+  <span class="token function">doubleCounter</span><span class="token punctuation">(</span>state<span class="token operator">:</span> State<span class="token punctuation">)</span><span class="token operator">:</span> <span class="token builtin">number</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+<span class="token keyword">export</span> <span class="token keyword">type</span> <span class="token class-name">Store<span class="token operator">&lt;</span><span class="token constant">S</span> <span class="token operator">=</span> State<span class="token operator">&gt;</span></span> <span class="token operator">=</span> Omit<span class="token operator">&lt;</span>
+  VuexStore<span class="token operator">&lt;</span><span class="token constant">S</span><span class="token operator">&gt;</span><span class="token punctuation">,</span>
+  <span class="token string">&quot;commit&quot;</span> <span class="token operator">|</span> <span class="token string">&quot;getters&quot;</span> <span class="token operator">|</span> <span class="token string">&quot;dispatch&quot;</span>
+<span class="token operator">&gt;</span> <span class="token operator">&amp;</span> <span class="token punctuation">{</span>
+  <span class="token generic-function"><span class="token function">commit</span><span class="token generic class-name"><span class="token operator">&lt;</span><span class="token constant">K</span> <span class="token keyword">extends</span> <span class="token keyword">keyof</span> Mutations<span class="token punctuation">,</span> <span class="token constant">P</span> <span class="token keyword">extends</span> Parameters<span class="token operator">&lt;</span>Mutations<span class="token punctuation">[</span><span class="token constant">K</span><span class="token punctuation">]</span><span class="token operator">&gt;</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token operator">&gt;</span></span></span><span class="token punctuation">(</span>
+    key<span class="token operator">:</span> <span class="token constant">K</span><span class="token punctuation">,</span>
+    payload<span class="token operator">:</span> <span class="token constant">P</span><span class="token punctuation">,</span>
+    options<span class="token operator">?</span><span class="token operator">:</span> CommitOptions
+  <span class="token punctuation">)</span><span class="token operator">:</span> ReturnType<span class="token operator">&lt;</span>Mutations<span class="token punctuation">[</span><span class="token constant">K</span><span class="token punctuation">]</span><span class="token operator">&gt;</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span> <span class="token operator">&amp;</span> <span class="token punctuation">{</span>
+  getters<span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token punctuation">[</span><span class="token constant">K</span> <span class="token keyword">in</span> <span class="token keyword">keyof</span> Getters<span class="token punctuation">]</span><span class="token operator">:</span> ReturnType<span class="token operator">&lt;</span>Getters<span class="token punctuation">[</span><span class="token constant">K</span><span class="token punctuation">]</span><span class="token operator">&gt;</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span> <span class="token operator">&amp;</span> <span class="token punctuation">{</span>
+  <span class="token generic-function"><span class="token function">dispatch</span><span class="token generic class-name"><span class="token operator">&lt;</span><span class="token constant">K</span> <span class="token keyword">extends</span> <span class="token keyword">keyof</span> Actions<span class="token operator">&gt;</span></span></span><span class="token punctuation">(</span>
+    key<span class="token operator">:</span> <span class="token constant">K</span><span class="token punctuation">,</span>
+    payload<span class="token operator">?</span><span class="token operator">:</span> Parameters<span class="token operator">&lt;</span>Actions<span class="token punctuation">[</span><span class="token constant">K</span><span class="token punctuation">]</span><span class="token operator">&gt;</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+    options<span class="token operator">?</span><span class="token operator">:</span> DispatchOptions
+  <span class="token punctuation">)</span><span class="token operator">:</span> ReturnType<span class="token operator">&lt;</span>Actions<span class="token punctuation">[</span><span class="token constant">K</span><span class="token punctuation">]</span><span class="token operator">&gt;</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+</code></pre></div><div class="language-typescript extra-class"><pre class="language-typescript"><code><span class="token comment">// types/index.ts</span>
+
+<span class="token keyword">import</span> <span class="token punctuation">{</span> State <span class="token keyword">as</span> CounterState<span class="token punctuation">,</span> Store <span class="token keyword">as</span> CounterStore <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">&quot;./counter&quot;</span><span class="token punctuation">;</span>
+
+<span class="token keyword">export</span> <span class="token keyword">type</span> <span class="token class-name">State</span> <span class="token operator">=</span> <span class="token punctuation">{</span>
+  Counter<span class="token operator">:</span> CounterState<span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+<span class="token keyword">export</span> <span class="token keyword">type</span> <span class="token class-name">Store</span> <span class="token operator">=</span> CounterStore<span class="token operator">&lt;</span>Pick<span class="token operator">&lt;</span>State<span class="token punctuation">,</span> <span class="token string">&quot;Counter&quot;</span><span class="token operator">&gt;&gt;</span><span class="token punctuation">;</span>
+
+</code></pre></div></div></section> <footer class="page-edit"><!----> <div class="last-updated"><span class="prefix">Last Updated: </span> <span class="time">8/16/2021, 5:52:34 PM</span></div></footer> <!----> <div class="comments-wrapper"><!----></div> <ul class="side-bar sub-sidebar-wrapper" style="width:12rem;" data-v-70334359><li class="level-2" data-v-70334359><a href="/work/typescript-advanced.html#ts-type-program-png-https-cdn-nlark-com-yuque-0-2021-png-543189-1619155106013-64438be7-fe96-44eb-96b6-cb26181146fd-png-clientid-u76df4b83-bff6-4-from-ui-id-ljkqc-margin-5bobject-20object-5d-name-ts-type-program-png-originheight-704-originwidth-1564-originaltype-binary-size-73024-status-done-style-none-taskid-u5232ca87-47ad-4164-b9fc-cf308b8a9ef" class="sidebar-link reco-side-ts-type-program-png-https-cdn-nlark-com-yuque-0-2021-png-543189-1619155106013-64438be7-fe96-44eb-96b6-cb26181146fd-png-clientid-u76df4b83-bff6-4-from-ui-id-ljkqc-margin-5bobject-20object-5d-name-ts-type-program-png-originheight-704-originwidth-1564-originaltype-binary-size-73024-status-done-style-none-taskid-u5232ca87-47ad-4164-b9fc-cf308b8a9ef" data-v-70334359>!ts-type-program.png</a></li><li class="level-2" data-v-70334359><a href="/work/typescript-advanced.html#前言" class="sidebar-link reco-side-前言" data-v-70334359>前言</a></li><li class="level-2" data-v-70334359><a href="/work/typescript-advanced.html#-2" class="sidebar-link reco-side--2" data-v-70334359>!ts1.png</a></li><li class="level-2" data-v-70334359><a href="/work/typescript-advanced.html#类型守卫" class="sidebar-link reco-side-类型守卫" data-v-70334359>类型守卫</a></li><li class="level-3" data-v-70334359><a href="/work/typescript-advanced.html#typeof" class="sidebar-link reco-side-typeof" data-v-70334359>typeof</a></li><li class="level-3" data-v-70334359><a href="/work/typescript-advanced.html#instanceof" class="sidebar-link reco-side-instanceof" data-v-70334359>instanceof</a></li><li class="level-3" data-v-70334359><a href="/work/typescript-advanced.html#in" class="sidebar-link reco-side-in" data-v-70334359>in</a></li><li class="level-3" data-v-70334359><a href="/work/typescript-advanced.html#is" class="sidebar-link reco-side-is" data-v-70334359>is</a></li><li class="level-2" data-v-70334359><a href="/work/typescript-advanced.html#类型断言" class="sidebar-link reco-side-类型断言" data-v-70334359>类型断言</a></li><li class="level-3" data-v-70334359><a href="/work/typescript-advanced.html#非空断言" class="sidebar-link reco-side-非空断言" data-v-70334359>非空断言</a></li><li class="level-2" data-v-70334359><a href="/work/typescript-advanced.html#高级类型" class="sidebar-link reco-side-高级类型" data-v-70334359>高级类型</a></li><li class="level-3" data-v-70334359><a href="/work/typescript-advanced.html#交叉类型-intersection-types" class="sidebar-link reco-side-交叉类型-intersection-types" data-v-70334359>交叉类型 (Intersection Types)</a></li><li class="level-3" data-v-70334359><a href="/work/typescript-advanced.html#联合类型-union-types" class="sidebar-link reco-side-联合类型-union-types" data-v-70334359>联合类型 (Union Types)</a></li><li class="level-3" data-v-70334359><a href="/work/typescript-advanced.html#索引类型-indexable-types" class="sidebar-link reco-side-索引类型-indexable-types" data-v-70334359>索引类型 (Indexable Types)</a></li><li class="level-3" data-v-70334359><a href="/work/typescript-advanced.html#映射类型-mapped-types" class="sidebar-link reco-side-映射类型-mapped-types" data-v-70334359>映射类型 (Mapped Types)</a></li><li class="level-3" data-v-70334359><a href="/work/typescript-advanced.html#条件类型-conditional-types" class="sidebar-link reco-side-条件类型-conditional-types" data-v-70334359>条件类型 (Conditional Types)</a></li><li class="level-3" data-v-70334359><a href="/work/typescript-advanced.html#infer关键字" class="sidebar-link reco-side-infer关键字" data-v-70334359>infer关键字</a></li><li class="level-2" data-v-70334359><a href="/work/typescript-advanced.html#工具类型" class="sidebar-link reco-side-工具类型" data-v-70334359>工具类型</a></li><li class="level-3" data-v-70334359><a href="/work/typescript-advanced.html#partial" class="sidebar-link reco-side-partial" data-v-70334359>Partial</a></li><li class="level-3" data-v-70334359><a href="/work/typescript-advanced.html#required" class="sidebar-link reco-side-required" data-v-70334359>Required</a></li><li class="level-3" data-v-70334359><a href="/work/typescript-advanced.html#readonly" class="sidebar-link reco-side-readonly" data-v-70334359>Readonly</a></li><li class="level-3" data-v-70334359><a href="/work/typescript-advanced.html#extract" class="sidebar-link reco-side-extract" data-v-70334359>Extract</a></li><li class="level-3" data-v-70334359><a href="/work/typescript-advanced.html#exclude" class="sidebar-link reco-side-exclude" data-v-70334359>Exclude</a></li><li class="level-3" data-v-70334359><a href="/work/typescript-advanced.html#record" class="sidebar-link reco-side-record" data-v-70334359>Record</a></li><li class="level-3" data-v-70334359><a href="/work/typescript-advanced.html#pick" class="sidebar-link reco-side-pick" data-v-70334359>Pick</a></li><li class="level-3" data-v-70334359><a href="/work/typescript-advanced.html#omit" class="sidebar-link reco-side-omit" data-v-70334359>Omit</a></li><li class="level-3" data-v-70334359><a href="/work/typescript-advanced.html#returntype" class="sidebar-link reco-side-returntype" data-v-70334359>ReturnType</a></li><li class="level-2" data-v-70334359><a href="/work/typescript-advanced.html#vuex-ts-实战" class="sidebar-link reco-side-vuex-ts-实战" data-v-70334359>Vuex + Ts 实战</a></li></ul></main> <!----></div></div></div></div><div class="global-ui"><div class="back-to-ceiling" style="right:1rem;bottom:6rem;width:2.5rem;height:2.5rem;border-radius:.25rem;line-height:2.5rem;display:none;" data-v-c6073ba8 data-v-c6073ba8><svg t="1574745035067" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="5404" class="icon" data-v-c6073ba8><path d="M526.60727968 10.90185116a27.675 27.675 0 0 0-29.21455937 0c-131.36607665 82.28402758-218.69155461 228.01873535-218.69155402 394.07834331a462.20625001 462.20625001 0 0 0 5.36959153 69.94390903c1.00431239 6.55289093-0.34802892 13.13561351-3.76865779 18.80351572-32.63518765 54.11355614-51.75690182 118.55860487-51.7569018 187.94566865a371.06718723 371.06718723 0 0 0 11.50484808 91.98906777c6.53300375 25.50556257 41.68394495 28.14064038 52.69160883 4.22606766 17.37162448-37.73630017 42.14135425-72.50938081 72.80769204-103.21549295 2.18761121 3.04276886 4.15646224 6.24463696 6.40373557 9.22774369a1871.4375 1871.4375 0 0 0 140.04691725 5.34970492 1866.36093723 1866.36093723 0 0 0 140.04691723-5.34970492c2.24727335-2.98310674 4.21612437-6.18497483 6.3937923-9.2178004 30.66633723 30.70611158 55.4360664 65.4791928 72.80769147 103.21549355 11.00766384 23.91457269 46.15860503 21.27949489 52.69160879-4.22606768a371.15156223 371.15156223 0 0 0 11.514792-91.99901164c0-69.36717486-19.13165746-133.82216804-51.75690182-187.92578088-3.42062944-5.66790279-4.76302748-12.26056868-3.76865837-18.80351632a462.20625001 462.20625001 0 0 0 5.36959269-69.943909c-0.00994388-166.08943902-87.32547796-311.81420293-218.6915546-394.09823051zM605.93803103 357.87693858a93.93749974 93.93749974 0 1 1-187.89594924 6.1e-7 93.93749974 93.93749974 0 0 1 187.89594924-6.1e-7z" p-id="5405" data-v-c6073ba8></path><path d="M429.50777625 765.63860547C429.50777625 803.39355007 466.44236686 1000.39046097 512.00932183 1000.39046097c45.56695499 0 82.4922232-197.00623328 82.5015456-234.7518555 0-37.75494459-36.9345906-68.35043303-82.4922232-68.34111062-45.57627738-0.00932239-82.52019037 30.59548842-82.51086798 68.34111062z" p-id="5406" data-v-c6073ba8></path></svg></div></div></div>
+    <script src="/assets/js/app.ada5a00d.js" defer></script><script src="/assets/js/3.7abb383a.js" defer></script><script src="/assets/js/1.bfb1528b.js" defer></script><script src="/assets/js/48.b4dbb0b7.js" defer></script>
+  </body>
+</html>
