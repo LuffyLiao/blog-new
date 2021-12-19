@@ -8,50 +8,55 @@ tags:
  - 微前端
 ---
 
-#### 前言
+### 前言
 > 笑傲江湖：使用了vue3启动框架，配置了webpack各项优化，项目架构没有问题，hiahiahiahia...
 > 风起云涌：几千个页面不停上，几百个路由使劲堆，项目越堆越大，直到某天，电闪雷鸣，暴虐的风雪如同一头游荡在荒原上的饿狼，正撕咬着我的皮肉、啃噬着我的筋骨...
 > 刀光剑影：产品：我就改个文字，怎么还要等这么久打包项目？测试：怎么改动一个地方会影响那么多处？我：牵一发而动全身，只怪我的头发太茂密！
 > 华山论剑：迫于兴趣（~~yinwei~~），开始折腾qiankun，single-spa，多页面应用等方式拆分项目打包上线。
 
-#### 一、什么是微前端？
+### 一、什么是微前端？
 --- 
+
 > Techniques, strategies and recipes for building a modern web app with multiple teams that can ship features independently. -- [Micro Frontends](https://micro-frontends.org/)
 > 微前端是一种多个团队通过独立发布功能的方式来共同构建现代化 web 应用的技术手段及方法策略。
 
 说人话，微前端就是将不同的功能按照不同的维度拆分成多个子应用。通过主应用（基座）来加载这些子应用。各应用可以独立开发、测试、部署。微前端的核心在于拆，拆完后在合。
-![avatar](./images/bff-node.png)
+![avatar](./images/micro.png)
 
-#### 二、微前端的优势
+### 二、微前端的优势
 ---
+
 - 独立开发、测试、部署
 - 各应用技术栈可以使用不同的技术栈
 - 解决协同开发出现的冲突、笨重等痛点
 
-#### 三、微前端的方案
+### 三、微前端的方案
 --- 
+
 |  方案   | 描述  |  优点 |  缺点  |
 |  ----  | ----  | ----  |  ----  |
 | iframe嵌套  | 每个子应用使用iframe嵌套 |  实现简单，子应用自带沙箱，相互不会被影响  |  通信麻烦，太过简单(~~low~~)，安全性不高  |
 | npm包  | 子应用通过npm包形式发布，在主应用安装使用 | 只能满足独立开发  | 不能单独部署  ----  |
 | 中心路由基座 | 统一由基座工程进行管理，按照DOM节点的注册、挂载、卸载来完成。 | 子应用完全独立，测试，部署，可以使用不同技术栈， | 通信方式不够灵活  ----  |
 
-#### 四、主流框架
+### 四、主流框架
 ---
+
 1. single-spa：[官网链接](https://single-spa.js.org/docs/getting-started-overview)
 - 顾名思义，就是单人水疗的意思。其实！并不是！官方文档特别难懂，喜欢造概念，而且GitHub的demo也特别复杂。
 - 有兴趣的可以自行了解，略~
 2. qiankun：[官网链接](https://qiankun.umijs.org/zh/guide)
 - 乾坤，阿里大神们基于single-spa写的一套微前端框架。中文文档，通俗易懂，github也很生态活跃。
 
-####  五、主应用配置
+###  五、主应用配置
 --- 
+
 此次实践，主应用、子应用都是vue3框架，先介绍主应用配置
-1. 安装qiankun
+#### 5.1 安装qiankun
 ```shell
 yarn add qiankun
 ```
-2. 注册微应用
+#### 5.2 改造`main.js`，注册微应用
 ```javascript
 // main.js
 import { registerMicroApps, start } from 'qiankun'
@@ -71,7 +76,7 @@ registerMicroApps(pages)
 // 启动
 start()
 ```
-- env设置对应的环境变量
+#### 5.3 改造`env`文件，设置对应的环境变量
 ```javascript
 // 生产环境env.production env.uat
 VUE_APP_ENTRY_URL = '/child/police/' 
@@ -79,7 +84,7 @@ VUE_APP_ENTRY_URL = '/child/police/'
 // 开发环境env.development
 VUE_APP_ENTRY_URL = '//localhost:7100'
 ```
-- App.vue 中创建子应用容器
+#### 5.4 改造App.vue，创建子应用容器
 ```javascript
 // App.vue
 <div>
@@ -89,12 +94,10 @@ VUE_APP_ENTRY_URL = '//localhost:7100'
   <div id="appContainer" />
 </div>
 ```
-
-
-####  六、子应用配置
+###  六、子应用配置
 ---
 
-1. 使用 webpack 运行时, publicPath 配置
+#### 6.1 使用 webpack 运行时, 配置publicPath 
 如果是在qiankun下运行，则qiankun会在微应用bootstrap之前注入一个运行时的publicPath 变量，你需要做的是在微应用的main.js的`顶部`添加如下代码：
 ```javascript
 __webpack_public_path__ = window.__INJECTED_PUBLIC_PATH_BY_QIANKUN__;
@@ -108,7 +111,7 @@ if (window.__POWERED_BY_QIANKUN__) {
 }
 ```
 
-2. 子应用生命周期
+#### 6.2 改造子应用main.js，暴露生命周期
 子应用必须在入口文件`main.js`中暴露`bootstrap`,`mount`,`unmount`三个生命周期
 
 ```javascript
@@ -148,7 +151,7 @@ export async function unmount (props) {
 }
 
 ```
-3. 子应用路由设置
+#### 6.3，改造router.js, 子应用路由设置
 ```javascript
 // route/index.js
 import { createRouter, createWebHistory } from 'vue-router'
@@ -171,7 +174,7 @@ const router = createRouter({
 export default router
 ```
 
-4. 部署及跨域配置
+#### 6.4 改造vue.config.js 部署及跨域配置
 ```javascript
 // vue.config.js
 const { name }  = require('./package')
@@ -201,9 +204,10 @@ const config = {
 // 相应的env文件配置publicPath
 VUE_APP_PUBLIC_PATH = '/child/police/' // 开发环境则为 '/'
 ```
-####  七、nginx配置
+### 七、nginx配置
 --- 
-- 服务器文件目录
+
+#### 7.1 服务器文件目录
 ```
 data                              源码目录
 |-- front                         
@@ -218,7 +222,7 @@ data                              源码目录
 |   |-- |-- |-- economy            经济专题子应用
 |   |-- |-- |-- ...
 ```
-- nginx配置
+#### 7.2 nginx配置
 ```shell
 server {
   listen       8888;
@@ -239,8 +243,9 @@ server {
   }
 ```
 
-####  八、注意事项
+###  八、注意事项
 ---
+
 在实战中踩到一些坑点，记录如下：
 
 1. 主应用和子应用的路由方式建议保持一致，建议都使用`history`模式
@@ -268,10 +273,13 @@ registerMicroApps([
 5. 控制台报错`Application died in status NOT_MOUNTED: Target container with #container not existed after xxx mounted!`
 原因：微应用加载后容器 DOM 节点不存在了。可能是和其他id冲突了，所以子应用id建议'app-police'这种格式
 
-####  九、未完成工作
+
+###  九、未完成工作
 --- 
+
 由于本次探路采用了一个比较简单的警务专题，还有以下工作带完善
 1. 主、子应用传参，比如路由，通信
 2. 公共组件的封装后上传到npm，各子应用自行`npm install`
 3. 虽然qiankun内部有做沙箱处理，但也可能会js/css隔离的问题
+4. 最开始想使用`vite`启动微应用，官网没有相关文档，我还按照webpack规范格式自行配置了`vite.config.js`的打包方式，结果怎么试都不行，去github issue一看，有部分人都说不行，但作者明确是可以支持的，后续可以再考量一番，如果实现了，那么本地运行速度可以提升至少`70%`！
 ....
