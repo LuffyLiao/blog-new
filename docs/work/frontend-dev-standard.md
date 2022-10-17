@@ -9,7 +9,7 @@ categories:
 #### 目的
 规范的目的是为了编写高质量的代码，让团队成员每天看代码的心情是愉悦的，大家在一起是快乐的。
 
-#### 一、通用规范
+### 一、通用规范
 
 #### （一）命名规范
 ---
@@ -129,7 +129,7 @@ let testDiv = "<div id='test'></div>";
 #### 1.4.5 删除无用代码
 对于无用代码必须及时删除，例如：一些调试的 console 语句、无用的弃用功能代码
 
-#### 二、Vue项目规范
+### 二、Vue项目规范
 
 #### （一）项目目录规范
 ---
@@ -241,6 +241,9 @@ props: {
 // 父组件 template
 <market-item :active-index="1"></market-item>
 ```
+#### 2.2.3 proxy代理
+- 所有请求都必须加上`api-proxy`前缀，开发环境通过`vue.config.js` 中的`proxy`代理
+- 后端的接口也必须加上`api-proxy`前缀，ng再配置转发，如果后端不以此前缀开头，必须拒绝，并让其修改
 
 #### （三）其他规范
 
@@ -268,4 +271,3 @@ li(
 li(:item='item', :index='index', :key='item.id', :active-index='activeIndex',  @mouseover='setActiveIndex(index)', @mouseout='setActiveIndex(-1)', @click='$emit("itemClick", item, "historyList")'
 )
 ```
-
