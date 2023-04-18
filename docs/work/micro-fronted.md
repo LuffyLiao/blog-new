@@ -281,5 +281,84 @@ registerMicroApps([
 1. 主、子应用传参，比如路由，通信
 2. 公共组件的封装后上传到npm，各子应用自行`npm install`
 3. 虽然qiankun内部有做沙箱处理，但也可能会js/css隔离的问题
-4. 最开始想使用`vite`启动微应用，官网没有相关文档，我还按照webpack规范格式自行配置了`vite.config.js`的打包方式，结果怎么试都不行，去github issue一看，有部分人都说不行，但作者明确是可以支持的，后续可以再考量一番，如果实现了，那么本地运行速度可以提升至少`70%`！
 ....
+###  十、遇到的问题及解决方法
+1. 子应用的跨域问题
+解决办法：在主应用的`config`配置中添加`proxy`
+```javascript
+export default {
+  apps: [
+    {
+      name: 'app1',
+      entry: '//localhost:8081',
+      container: '#app1',
+      activeRule: '/app1',
+    },
+    {
+      name: 'app2',
+      entry: '//localhost:8082',
+      container: '#app2',
+      activeRule: '/app2',
+    },
+  ],
+  proxy: {
+    '/api': {
+      target: 'http://localhost:3000', // 主应用的启动端口号
+      changeOrigin: true,
+      pathRewrite: {
+        '^/api': '',
+      },
+    },
+  },
+};
+```
+2. 子应用共享主应用`store`
+在注册子应用的时候，通过传`props`给子应用
+```javascript
+
+import { loadMicroApp } from 'qiankun';
+import store from './store';
+
+loadMicroApp({
+  name: 'app1',
+  entry: '//localhost:8081',
+  container: '#app1',
+  props: {
+    store,
+  },
+});
+```
+在子应用接收prop并在需要的时候进行更新或者使用
+```vue
+<!-- 子应用文件 -->
+
+<template>
+  <div>
+    <h1>子应用</h1>
+    <p>count: {{ count }}</p>
+    <button @click="increment">增加</button>
+    <button @click="decrement">减少</button>
+  </div>
+</template>
+
+<script>
+export default {
+  name: 'App',
+  props: ['store'],
+  computed: {
+    count() {
+      return this.store.state.count;
+    },
+  },
+  methods: {
+    increment() {
+      this.store.commit('increment');
+    },
+    decrement() {
+      this.store.commit('decrement');
+    },
+  },
+};
+</script>
+```
+3. 
